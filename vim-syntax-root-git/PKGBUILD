@@ -1,0 +1,22 @@
+#Maintainer: olantwin <olantwin at gmail dot com>
+pkgname=vim-syntax-root-git
+pkgver=r8.f4aa0c4
+pkgrel=1
+pkgdesc="Basic syntax highlighting for the ROOT Data Analysis Framework"
+arch=('any')
+url="https://github.com/olantwin/cern_root.vim"
+license=('custom:vim')
+depends=(vim)
+makedepends=('git')
+conflicts=('vim-syntax-root')
+source=("$pkgname"::'git://github.com/olantwin/cern_root.vim.git')
+md5sums=('SKIP')
+
+pkgver() {
+    cd $srcdir/$pkgname
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+  install -Dm 644 "$srcdir/$pkgname/after/syntax/cpp/cern_root.vim" "$pkgdir/usr/share/vim/vimfiles/after/syntax/cpp/cern_root.vim"
+}
