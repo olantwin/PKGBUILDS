@@ -1,6 +1,6 @@
 #Maintainer: olantwin <olantwin at gmail dot com>
 pkgname=vim-syntax-root-git
-pkgver=r8.f4aa0c4
+pkgver=r10.41d3e50
 pkgrel=1
 pkgdesc="Basic syntax highlighting for the ROOT Data Analysis Framework"
 arch=('any')
